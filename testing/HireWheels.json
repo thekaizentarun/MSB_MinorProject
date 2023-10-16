@@ -1,0 +1,567 @@
+{
+	"info": {
+		"_postman_id": "cbecab8f-749b-4493-a195-1aee23a6e7a4",
+		"name": "HireWheels",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "21312526"
+	},
+	"item": [
+		{
+			"name": "Vehicle Controller",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url1}}/hirewheel/v1/sayVehicle",
+					"host": [
+						"{{base_url1}}"
+					],
+					"path": [
+						"hirewheel",
+						"v1",
+						"sayVehicle"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Vehicles",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url1}}/hirewheel/v1/vehicles",
+					"host": [
+						"{{base_url1}}"
+					],
+					"path": [
+						"hirewheel",
+						"v1",
+						"vehicles"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Admin Controller",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url1}}/hirewheel/v1/sayAdmin",
+					"host": [
+						"{{base_url1}}"
+					],
+					"path": [
+						"hirewheel",
+						"v1",
+						"sayAdmin"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add New Vehicle",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"userLogin\": {\n        \"email\": \"chirag@gmail.com\",\n        \"password\": \"password\"\n    },\n    \"vehicle\": {\n        \"vehicleModel\": \"Maruti\",\n        \"vehicleNumber\": \"HR26\",\n        \"color\": \"Black\",\n        \"vehicleImageUrl\": \"URL\",\n        \"vehicleSubcategory\": {\n            \"vehicleSubcategoryName\": \"Suzuki\",\n            \"pricePerDay\": 100.0,\n            \"vehicleCategory\": {\n                \"vehicleCategoryName\": \"Hatch Back\"\n            }\n        },\n        \"location\": {\n            \"locationName\": \"Sirsa\",\n            \"address\": \"Sector 23A\",\n            \"pincode\": 122017,\n            \"city\": {\n                \"cityName\": \"Gurgaon\"\n            }\n        },\n        \"fuelType\": {\n            \"fuelType\": \"Petrol\"\n        }\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url1}}/hirewheel/v1/vehicles",
+					"host": [
+						"{{base_url1}}"
+					],
+					"path": [
+						"hirewheel",
+						"v1",
+						"vehicles"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Availability Status Vehicle",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"userLogin\": {\n        \"email\": \"chirag@gmail.com\",\n        \"password\": \"password\"\n    },\n    {\n        \"availabilityStaus\": 0\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url1}}/hirewheel/v1/vehicles/2",
+					"host": [
+						"{{base_url1}}"
+					],
+					"path": [
+						"hirewheel",
+						"v1",
+						"vehicles",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login ",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\": \"chirag@gmail.com\",\n    \"password\": \"password\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url1}}/hirewheel/v1/users/login",
+					"host": [
+						"{{base_url1}}"
+					],
+					"path": [
+						"hirewheel",
+						"v1",
+						"users",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Register User",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"firstName\": \"Chirag\",\n    \"lastName\": \"Sardana\",\n    \"password\": \"password\",\n    \"email\": \"chirag1@gmail.com\",\n    \"mobileNo\": \"1212121212\",\n    \"role\": {\n        \"roleId\": 8\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url1}}/hirewheel/v1/users",
+					"host": [
+						"{{base_url1}}"
+					],
+					"path": [
+						"hirewheel",
+						"v1",
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add Booking",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"userId\": 90,\n    \"vehicleId\": 91,\n    \"pickupDate\": \"2020-07-17T12:00:00.000+00:00\",\n    \"dropoffDate\": \"2020-07-18\",\n    \"bookingDate\": \"2020-06-29\",\n    \"locationId\": 84,\n    \"amount\": 50000\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url1}}/hirewheel/v1/bookings",
+					"host": [
+						"{{base_url1}}"
+					],
+					"path": [
+						"hirewheel",
+						"v1",
+						"bookings"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add New Vehicle Part 2",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"requestVehicle\": {\n        \"vehicleModel\": \"AMG\",\n        \"vehicleNumber\": \"INDH 345\",\n        \"vehicleSubCategoryId\": 86,\n        \"color\": \"Blue\",\n        \"fuelTypeId\": 80,\n        \"locationId\": 84,\n        \"vehicleImageUrl\": \"https://www.mercedes-amg.com/en/world-of-amg/news/press-information mercedes-amg-gtblack-series-record-lap.html\",\n        \"availabilityStatus\": 1\n    },\n    \"userLogin\": {\n        \"email\": \"chiragAdmin@gmail.com\",\n        \"password\": \"password\"\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url1}}/hirewheel/v1/vehicles",
+					"host": [
+						"{{base_url1}}"
+					],
+					"path": [
+						"hirewheel",
+						"v1",
+						"vehicles"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Change Availability",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"requestVehicle\": {\n        \"availabilityStatus\": 0\n    },\n    \"userLogin\": {\n        \"email\": \"chiragAdmin@gmail.com\",\n        \"password\": \"password\"\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url1}}/hirewheel/v1/vehicles/91",
+					"host": [
+						"{{base_url1}}"
+					],
+					"path": [
+						"hirewheel",
+						"v1",
+						"vehicles",
+						"91"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Cities",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url1}}/hirewheel/v1/city",
+					"host": [
+						"{{base_url1}}"
+					],
+					"path": [
+						"hirewheel",
+						"v1",
+						"city"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add City",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"cityName\": \"Gurugram\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url1}}/hirewheel/v1/city",
+					"host": [
+						"{{base_url1}}"
+					],
+					"path": [
+						"hirewheel",
+						"v1",
+						"city"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get All FuelType",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url1}}/hirewheel/v1/fuelType",
+					"host": [
+						"{{base_url1}}"
+					],
+					"path": [
+						"hirewheel",
+						"v1",
+						"fuelType"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add FuelType",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"fuelType\": \"CNG\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url1}}/hirewheel/v1/fuelType",
+					"host": [
+						"{{base_url1}}"
+					],
+					"path": [
+						"hirewheel",
+						"v1",
+						"fuelType"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Location",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url1}}/hirewheel/v1/location",
+					"host": [
+						"{{base_url1}}"
+					],
+					"path": [
+						"hirewheel",
+						"v1",
+						"location"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add Location",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"locationName\": \"Hyundia India\",\n    \"address\": \"Sector 71\",\n    \"pincode\": \"122019\",\n    \"cityId\": 1\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url1}}/hirewheel/v1/location",
+					"host": [
+						"{{base_url1}}"
+					],
+					"path": [
+						"hirewheel",
+						"v1",
+						"location"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Roles",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url1}}/hirewheel/v1/role",
+					"host": [
+						"{{base_url1}}"
+					],
+					"path": [
+						"hirewheel",
+						"v1",
+						"role"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add Role",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"roleName\": \"USER\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url1}}/hirewheel/v1/role",
+					"host": [
+						"{{base_url1}}"
+					],
+					"path": [
+						"hirewheel",
+						"v1",
+						"role"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Vehicle Category",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url1}}/hirewheel/v1/vehicleCategory",
+					"host": [
+						"{{base_url1}}"
+					],
+					"path": [
+						"hirewheel",
+						"v1",
+						"vehicleCategory"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add VehicleCategory",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"vehicleCategoryName\": \"SUV\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url1}}/hirewheel/v1/vehicleCategory",
+					"host": [
+						"{{base_url1}}"
+					],
+					"path": [
+						"hirewheel",
+						"v1",
+						"vehicleCategory"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get All VehicleSubcategory",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url1}}/hirewheel/v1/vehicleSubcategory",
+					"host": [
+						"{{base_url1}}"
+					],
+					"path": [
+						"hirewheel",
+						"v1",
+						"vehicleSubcategory"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add VehicleSubcategory",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"vehicleSubcategoryName\": \"Mini SUV\",\n    \"pricePerDay\": 2200.0,\n    \"vehicleCategoryId\": 1\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url1}}/hirewheel/v1/vehicleSubcategory",
+					"host": [
+						"{{base_url1}}"
+					],
+					"path": [
+						"hirewheel",
+						"v1",
+						"vehicleSubcategory"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Booking",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url1}}/hirewheel/v1/bookings",
+					"host": [
+						"{{base_url1}}"
+					],
+					"path": [
+						"hirewheel",
+						"v1",
+						"bookings"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
